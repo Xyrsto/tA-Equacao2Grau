@@ -1,6 +1,13 @@
 ﻿@{
     //nesta zona escrevemos código C#
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Eq segundo grau";
+
+    string resposta = "";
+
+    if (!string.IsNullOrEmpty(ViewBag.x1))
+    {
+        resposta = "As soluções da equação são: x1 = " + ViewBag.x1 + "; x2= " + ViewBag.x2;
+    }
 }
 
 <!--nesta zona vamos escrever HTML-->
@@ -11,13 +18,18 @@
 </div>
 
 <h2 class="text-center">Introduza os valores dos parâmetros da equação</h2>
+<br/>
 
 <div class="col-3" style="margin:0px auto;">   
     <form>
-        <div class="row pb-1"><input type="text" placeholder="a"></input></div>
-        <div class="row pb-1"><input type="text" placeholder="b"></div>
-        <div class="row pb-1"><input type="text" placeholder="c"></div>
-        <br />
-        <div class="row pb-1"><input type="submit" value="Calcular" /></div>
-    </form>
+        <div class="row pb-1"><input type="text" placeholder="a" name="a"/></div>
+        <div class="row pb-1"><input type="text" placeholder="b" name="b"/></div>
+        <div class="row pb-1"><input type="text" placeholder="c" name="c"/></div>
+        <br/>
+        <div class="row pb-1"><input type="submit" value="Calcular"/></div>
+    </form>    
+</div>
+
+<div class="pt-5 text-center" style="margin:0px auto;">
+    <h2 class="fs-5">@resposta</h2>
 </div>
